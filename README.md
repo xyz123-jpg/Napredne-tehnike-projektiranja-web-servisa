@@ -1,3 +1,3 @@
 # Napredne-tehnike-projektiranja-web-servisa
 
-vježbe
+vježbe - php, mySql
