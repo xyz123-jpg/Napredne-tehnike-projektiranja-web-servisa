@@ -14,7 +14,7 @@
     <form method="post">
      <?php
 	$cars = array("Audi", "BMW", "Renault", "Citroen");
-        // Radio gumbi za odabir automobila
+
         foreach ($cars as $car) {
             echo "<input type='radio' id='$car' name='vozilo' value='$car' required>";
             echo "<label for='$car'>$car</label><br>";
@@ -26,7 +26,6 @@
 	
 	<?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Provjerava je li odabrano vozilo
         if (isset($_POST['vozilo'])) {
             $odabrano_vozilo = $_POST['vozilo'];
             echo "<h3>Odabrali ste vozilo: $odabrano_vozilo</h3>";
