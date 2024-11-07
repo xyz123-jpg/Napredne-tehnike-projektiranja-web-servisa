@@ -27,7 +27,7 @@
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Dohvati vrijednosti iz forme
+
         $a = $_POST['a'];
 		$b = rand(1,10);
 
@@ -38,7 +38,7 @@
 			echo "<h3 class='failure'>Niste pogodili broj :(</h3>";
 		}
 
-        // Prikaz rezultata
+
         echo "Broj je bio: " . $b;
   
     }
