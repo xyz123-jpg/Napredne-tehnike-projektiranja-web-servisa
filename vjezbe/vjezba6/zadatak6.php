@@ -29,7 +29,7 @@
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Dohvati vrijednosti iz forme
+
 		
 		if (isset($_POST['broj1'], $_POST['broj2'], $_POST['operacija'])) {
         $broj1 = $_POST['broj1'];
