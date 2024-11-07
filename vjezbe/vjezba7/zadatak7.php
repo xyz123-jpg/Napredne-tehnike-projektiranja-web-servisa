@@ -25,24 +25,23 @@
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Dohvati ocjene iz forme
+
         $kolokvij1 = $_POST['kolokvij1'];
         $kolokvij2 = $_POST['kolokvij2'];
 
-        // Provjera je li ocjena unutar dozvoljenog raspona
+ 
         if (($kolokvij1 < 1 || $kolokvij1 > 5) || ($kolokvij2 < 1 || $kolokvij2 > 5)) {
             echo "<h3>Greška: Ocjene moraju biti u rasponu od 1 do 5.</h3>";
         } else {
-            // Ako je jedan od kolokvija negativan (manji od 2), konačna ocjena je 1
+ 
             if ($kolokvij1 < 2 || $kolokvij2 < 2) {
                 $konacna_ocjena = 1;
                 echo "<h3>Krajnja ocjena: $konacna_ocjena (negativna ocjena)</h3>";
             } else {
-                // Izračun prosjeka i konačne ocjene
+
                 $prosjek = ($kolokvij1 + $kolokvij2) / 2;
                 echo "<h3>Prosjek ocjena: $prosjek</h3>";
 
-                // Zaokruživanje prosjeka na najbližu cijelu ocjenu
                 $konacna_ocjena = round($prosjek);
                 echo "<h3>Krajnja ocjena: $konacna_ocjena</h3>";
             }
