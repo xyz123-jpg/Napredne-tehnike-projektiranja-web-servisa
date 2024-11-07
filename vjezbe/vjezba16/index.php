@@ -76,7 +76,6 @@
             <option value="UK">Ujedinjeno Kraljevstvo</option>
             <option value="DE">Njemačka</option>
             <option value="FR">Francuska</option>
-            <!-- Dodajte više opcija prema potrebi -->
         </select><br>
 
         <input type="submit" value="Registriraj se">
