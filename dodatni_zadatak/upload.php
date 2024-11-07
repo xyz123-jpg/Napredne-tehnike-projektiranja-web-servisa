@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
     $targetFile = $targetDir . $uniqueFilename;
 
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-        // Insert the unique file path into the database
+
         $stmt = $conn->prepare("INSERT INTO images (file_path) VALUES (?)");
         $stmt->bind_param("s", $targetFile);
         $stmt->execute();
