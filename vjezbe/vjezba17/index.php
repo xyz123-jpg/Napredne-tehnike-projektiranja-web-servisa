@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zadatak 17</title>
 	<style>
-        /* Basic reset for margin and padding */
+ 
         body, h1, form {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
         }
 
-        /* Styling for the body */
+
         body {
             background-color: #f4f4f9;
             color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full height for centering */
+            height: 100vh; 
             text-align: center;
         }
 
-        /* Container for the form */
+   
         .container {
             background-color: #fff;
             padding: 20px;
@@ -32,7 +32,7 @@
             width: 300px; /* Fixed width for form */
         }
 
-        /* Form elements styling */
+
         label {
             margin-bottom: 10px;
             display: block;
@@ -40,11 +40,11 @@
         }
 
         input[type="text"] {
-            width: 100%; /* Full width input */
+            width: 100%; 
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            margin-bottom: 20px; /* Space below input */
+            margin-bottom: 20px; 
             font-size: 16px;
         }
 
@@ -60,7 +60,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #4b54d3; /* Darker shade on hover */
+            background-color: #4b54d3; 
         }
     </style>
 </style>
