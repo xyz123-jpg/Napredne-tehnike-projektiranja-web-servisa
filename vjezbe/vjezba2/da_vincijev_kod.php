@@ -1,5 +1,5 @@
 <?php
-// PHP blok za postavljanje varijabli
+
 $title = "Da Vincijev kod";
 $link = "https://hr.wikipedia.org/wiki/Da_Vincijev_kod";
 ?>
