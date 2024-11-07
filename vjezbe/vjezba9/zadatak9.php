@@ -19,11 +19,11 @@ $trenutni_dan = date('N');
 $trenutni_sati = date('G');
 
 $drzavni_praznici = array(
-    '01-01', // Nova godina
-    '05-01', // Praznik rada
-    '08-15', // Velika Gospa
-    '12-25', // Božić
-    '12-26'  // Sveti Stjepan
+    '01-01', 
+    '05-01',
+    '08-15', 
+    '12-25', 
+    '12-26'  
 );
 
 
