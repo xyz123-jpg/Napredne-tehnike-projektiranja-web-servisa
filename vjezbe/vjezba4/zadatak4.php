@@ -21,14 +21,14 @@
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Dohvati vrijednosti iz forme
+  
         $a = $_POST['a'];
         $b = $_POST['b'];
 
-        // Izračun varijable c
+
         $c = (3 * $a - $b) / 2;
 
-        // Prikaz rezultata
+
         echo "<h3>Rezultat:</h3>";
         echo "Vrijednost c je: " . $c;
     }
