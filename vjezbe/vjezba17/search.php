@@ -1,13 +1,13 @@
 <?php
-// Uključivanje konekcije na bazu (pretpostavljamo da je u datoteci 'db_connect.php')
+
 include 'db_connect.php';
 
-// Provjeravamo je li obrazac poslan
+
 if (isset($_POST['search_term'])) {
-    // Sprema unos iz forme i koristi mysqli_real_escape_string za zaštitu od SQL injection napada
+
     $search_term = mysqli_real_escape_string($conn, $_POST['search_term']);
     
-    // SQL upit za pretragu po imenu ili prezimenu, uključujući join s tabelom countries
+
     $query = "
         SELECT users.*, countries.country_name 
         FROM users 
@@ -15,10 +15,10 @@ if (isset($_POST['search_term'])) {
         WHERE users.name LIKE '%$search_term%' OR users.lastname LIKE '%$search_term%'
     ";
     
-    // Izvršavanje upita
+
     $result = mysqli_query($conn, $query);
     
-    // Provjeravamo jesu li pronađeni rezultati
+
     if (mysqli_num_rows($result) > 0) {
         echo "<h2>Search Results:</h2>";
 		 echo '<style>
@@ -46,21 +46,21 @@ if (isset($_POST['search_term'])) {
 
 
         echo "<table border='1'>";
-        echo "<tr><th>ID</th><th>Name</th><th>Lastname</th><th>Username</th><th>Country</th></tr>"; // Changed Country Code to Country
+        echo "<tr><th>ID</th><th>Name</th><th>Lastname</th><th>Username</th><th>Country</th></tr>"; 
         
-        // Ispis svakog rezultata u tablicu
+
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
             echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $row['lastname'] . "</td>";
             echo "<td>" . $row['username'] . "</td>";
-            echo "<td>" . ($row['country_name'] ? $row['country_name'] : 'N/A') . "</td>"; // Display country name or 'N/A'
+            echo "<td>" . ($row['country_name'] ? $row['country_name'] : 'N/A') . "</td>";
             echo "</tr>";
         }
         echo "</table>";
     } else {
-        // Ako nema rezultata
+
         echo "<p>No results found for '$search_term'</p>";
     }
 } else {
