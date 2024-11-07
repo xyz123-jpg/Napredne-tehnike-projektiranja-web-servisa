@@ -1,21 +1,21 @@
 <?php
-// Uključivanje konekcije na bazu
+
 include 'db_connect.php';
 
-// Provjerava da li je ID korisnika poslan
-if (isset($_GET['id'])) {
-    $user_id = intval($_GET['id']); // Dobijamo ID korisnika iz URL-a
 
-    // SQL upit za dobivanje korisničkih podataka
+if (isset($_GET['id'])) {
+    $user_id = intval($_GET['id']); 
+
+
     $query = "SELECT users.*, countries.country_name FROM users 
               LEFT JOIN countries ON users.country_id = countries.id 
               WHERE users.id = $user_id";
     
     $result = mysqli_query($conn, $query);
     
-    // Provjerava da li je korisnik pronađen
+
     if ($row = mysqli_fetch_assoc($result)) {
-        // Spremamo korisničke podatke u varijable
+
         $name = $row['name'];
         $lastname = $row['lastname'];
         $country_id = $row['country_id'];
@@ -28,7 +28,7 @@ if (isset($_GET['id'])) {
     exit;
 }
 
-// Dobijanje liste država za dropdown
+
 $countries_query = "SELECT * FROM countries";
 $countries_result = mysqli_query($conn, $countries_query);
 ?>
