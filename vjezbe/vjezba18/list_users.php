@@ -1,14 +1,14 @@
 <?php
-// Uključivanje konekcije na bazu
+
 include 'db_connect.php';
 
-// SQL upit za dobivanje svih korisnika
+
 $query = "SELECT users.*, countries.country_name 
           FROM users 
           LEFT JOIN countries ON users.country_id = countries.id";
 $result = mysqli_query($conn, $query);
 
-// Provjeravamo jesu li pronađeni rezultati
+
 if (mysqli_num_rows($result) > 0): ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -77,6 +77,5 @@ else:
     echo "<p>Nema korisnika u bazi podataka.</p>";
 endif;
 
-// Zatvaranje konekcije
 mysqli_close($conn);
 ?>
